@@ -5,8 +5,41 @@
 @import 'animate';
 @import 'global';
 
+.header {
+  max-width: 1920px;
+  width: 100%;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  z-index: 2;
+  background-color: $main-light;
+  box-shadow: $shadow;
+  &__wrapper {
+    padding: 15px 90px;
+  }
+}
 
+.wrapper {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+}
 
+.content {
+  width: calc(100% - 340px);
+  margin-left: auto;
+}
+
+.sidebar {
+  background-color: $main-light;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 1;
+  box-shadow: $shadow;
+}
 
 
 
