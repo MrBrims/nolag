@@ -7,8 +7,31 @@ body {
   line-height: 1.3;
 }
 
-p{
-  margin-bottom: 20px;
+.wrapper {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.sidebar-wrapper {
+  background-color: $main-light;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 1;
+}
+
+.content {
+  width: calc(100% - 300px);
+  margin-left: auto;
+}
+
+.container {
+  max-width: 1620px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 
