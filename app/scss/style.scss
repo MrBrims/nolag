@@ -7,83 +7,79 @@
 
 .sidebar {
   padding: 120px 40px;
+  &__title {
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid $border-color;
+    font-size: 20px;
+    position: relative;
+    font-weight: 500;
+    // &::before {
+    //   content: "#";
+    //   font-size: 25px;
+    //   font-weight: 700;
+    //   color: $accent-red;
+    // }
+  }
 }
 
 .menu {
+  padding-bottom: 6px;
+  border-bottom: 2px solid $border-color;
   &__link {
+    color: $text-dark;
+    font-size: 16px;
+    padding: 7px 0 7px 20px;
     display: block;
-    padding: 5px 0 5px 40px;
-    color: $text;
-    font-size: 17px;
-    opacity: .8;
-    position: relative;
-    transition: all .3s ease-in;
-    &:hover {
-      transform: translateX(5px);
-      opacity: 1;
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: 17px;
-      width: 20px;
-      height: 20px;
-      margin-top: -1px;
-    }
   }
   &__item + .menu__item {
     margin-top: 5px;
   }
-  &__horror::before {
-    background-image: url(../images/zombie.svg);
-  }
-  &__mmorpg::before {
-    background-image: url(../images/mmorpg.svg);
-  }
-  &__action::before {
-    background-image: url(../images/action.svg);
-  }
-  &__shooter::before {
-    background-image: url(../images/shooter.svg);
-  }
-  &__rpg::before {
-    background-image: url(../images/rpg.svg);
-  }
-  &__strategy::before {
-    background-image: url(../images/strategy.svg);
-  }
-  &__simulator::before {
-    background-image: url(../images/simulator.svg);
-  }
-  &__adventures::before {
-    background-image: url(../images/adventures.svg);
-  }
-  &__moba::before {
-    background-image: url(../images/moba.svg);
-  }
-  &__arcade::before {
-    background-image: url(../images/arcade.svg);
-  }
-  &__fighting::before {
-    background-image: url(../images/fighting.svg);
-  }
-  &__race::before {
-    background-image: url(../images/race.svg);
-  }
-  &__sport::before {
-    background-image: url(../images/sport.svg);
-  }
-  &__mmo::before {
-    background-image: url(../images/mmo.svg);
-  }
-  &__puzzles::before {
-    background-image: url(../images/puzzle.svg);
-  }
+  // &__horror::before {
+  //   background-image: url(../images/cat-bg-horror.png);
+  // }
+  // &__mmorpg::before {
+  //   background-image: url(../images/cat-bg-mmorpg.png);
+  // }
+  // &__action::before {
+  //   background-image: url(../images/cat-bg-action.png);
+  // }
+  // &__shooter::before {
+  //   background-image: url(../images/cat-bg-shooter.png);
+  // }
+  // &__rpg::before {
+  //   background-image: url(../images/cat-bg-rpg.png);
+  // }
+  // &__strategy::before {
+  //   background-image: url(../images/cat-bg-strategy.png);
+  // }
+  // &__simulator::before {
+  //   background-image: url(../images/cat-bg-simulator.png);
+  // }
+  // &__adventures::before {
+  //   background-image: url(../images/cat-bg-adventures.png);
+  // }
+  // &__moba::before {
+  //   background-image: url(../images/.png);
+  // }
+  // &__arcade::before {
+  //   background-image: url(../images/.png);
+  // }
+  // &__fighting::before {
+  //   background-image: url(../images/.png);
+  // }
+  // &__race::before {
+  //   background-image: url(../images/.png);
+  // }
+  // &__sport::before {
+  //   background-image: url(../images/.png);
+  // }
+  // &__mmo::before {
+  //   background-image: url(../images/.png);
+  // }
+  // &__puzzles::before {
+  //   background-image: url(../images/.png);
+  // }
 }
 
 .header {
@@ -94,7 +90,8 @@
   transform: translateX(-50%);
   top: 0;
   z-index: 2;
-  background-color: $main-light;
+  background: $main-light;
+  box-shadow: $shadow;
   &__inner {
     display: flex;
     height: 60px;
@@ -102,7 +99,7 @@
   &__left {
     max-width: 300px;
     width: 100%;
-    background-color: $main-gray;
+    background: $main-light;
     margin-right: 40px;
   }
   &__right {
@@ -119,11 +116,9 @@
   &__news {
     padding: 8px 30px;
     color: #ffffff;
-    border-radius: 4px;
     display: block;
     cursor: pointer;
-    background: linear-gradient(45deg, $accent-red, $accent-lightred);
-    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.7);
+    background: $accent-red;
     font-size: 16px;
     position: relative;
     margin-right: auto;
@@ -175,7 +170,7 @@
     font-size: 14px;
     text-transform: uppercase;
     margin-bottom: -3px;
-    color: $text;
+    color: $text-dark;
   }
   &__social-items {
     display: flex;
@@ -186,10 +181,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 38px;
-    height: 38px;
-    background: linear-gradient(45deg, $accent-red, $accent-lightred);
-    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    background: $accent-red;
     transition: transform 0.3s ease-in;
     cursor: pointer;
     &:hover {
@@ -205,7 +199,6 @@
     align-items: center;
     width: 34px;
     height: 34px;
-    border-radius: 50%;
     background-color: $main;
     background-repeat: no-repeat;
     background-position: center center;
@@ -245,12 +238,14 @@
   &__input {
     display: block;
     width: 100%;
-    border-radius: 30px;
     padding: 7px 30px 7px 50px;
     border: none;
     font-size: 16px;
-    letter-spacing: 1px;
+    color: $text-white;
     background-color: $main;
+    &::placeholder {
+      color: $text-dark;
+    }
     &:focus {
       outline: $outline;
     }
@@ -259,7 +254,7 @@
 
 .hero {
   margin-top: 57px;
-  background-image: url(../images/hero-bg5.jpg);
+  background-image: url(../images/hero-bg2.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -270,19 +265,19 @@
   }
   &__text {
     max-width: 600px;
-    margin: auto 0;
+    margin-top: 110px;
     padding: 40px 0;
   }
   &__title {
     font-size: 50px;
     text-transform: uppercase;
     margin-bottom: 20px;
-    color: $accent-gold;
+    color: $text-white;
     letter-spacing: 2px;
     font-weight: 700;
   }
   &__subtitle {
-    color: $text-white;
+    color: $text-dark;
     font-size: 50px;
     line-height: 1.1;
     font-weight: 700;
@@ -292,6 +287,110 @@
       font-weight: 300;
       letter-spacing: 5px;
     }
+  }
+}
+
+.related-news {
+  user-select: none;
+  margin-top: -180px;
+  &__wrapper {
+    position: relative;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+  &__header-text {
+    flex-shrink: 0;
+    margin-right: 20px;
+  }
+  &__slider-nav {
+    position: relative;
+    margin-left: auto;
+  }
+  &__slider-next,
+  &__slider-prev {
+    position: absolute;
+    top: -11px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    svg {
+      transition: transform 0.2s ease-in;
+    }
+  }
+  &__slider-next {
+    right: 0;
+    &:hover svg {
+      transform: translateX(5px);
+    }
+  }
+  &__slider-prev {
+    right: 80px;
+    &:hover svg {
+      transform: translateX(-5px);
+    }
+  }
+  &__slider-pagination {
+    margin-right: 200px;
+    margin-bottom: 26px;
+  }
+  .related-news__slider-nav .swiper-pagination-bullet {
+    width: 20px;
+    height: 5px;
+    border-radius: 0;
+    margin: 0 5px;
+    opacity: 1;
+    background-color: $main-light;
+    transition: all 0.4s ease-in-out;
+  }
+  .related-news__slider-nav .swiper-pagination-bullet-active {
+    background: $accent-red;
+    width: 30px;
+  }
+  &__slide {
+    position: relative;
+  }
+  &__text {
+    padding: 15px;
+    background: $main-light;
+  }
+  &__slide-title {
+    font-size: 20px;
+    margin-bottom: 7px;
+    font-weight: 300;
+  }
+  &__date {
+    font-size: 16px;
+    opacity: 0.5;
+    position: relative;
+    padding-left: 25px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/date-icon.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 20px;
+    }
+  }
+  &__cat {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: $accent-red;
+    padding: 5px 10px;
+    color: #ffffff;
+    font-size: 16px;
   }
 }
 
