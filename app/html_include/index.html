@@ -8,6 +8,13 @@
   <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
   <link rel="stylesheet" href="css/style.min.css">
   <title>Главная</title>
+  <noscript>
+    <style>
+      .simplebar-content-wrapper {
+        overflow: auto;
+      }
+    </style>
+  </noscript>
 </head>
 
 <body>
@@ -15,11 +22,13 @@
   @@include("chunk/header.html")
 
   <div class="wrapper">
-    <div class="sidebar-wrapper">
+    <div class="sidebar-wrapper" data-simplebar data-simplebar-auto-hide="false">
       @@include("chunk/sidebar.html")
     </div>
     <div class="content">
       @@include("chunk/hero.html")
+      @@include("chunk/related-news.html")
+      @@include("chunk/catalog.html")
     </div>
   </div>
 
