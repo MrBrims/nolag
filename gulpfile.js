@@ -40,6 +40,7 @@ function styles() {
 function scripts() {
   return src([
     'node_modules/swiper/swiper-bundle.min.js',
+    'node_modules/simplebar/dist/simplebar.min.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))

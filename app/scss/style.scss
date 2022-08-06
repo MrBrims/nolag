@@ -14,12 +14,6 @@
     font-size: 20px;
     position: relative;
     font-weight: 500;
-    // &::before {
-    //   content: "#";
-    //   font-size: 25px;
-    //   font-weight: 700;
-    //   color: $accent-red;
-    // }
   }
 }
 
@@ -29,57 +23,84 @@
   &__link {
     color: $text-dark;
     font-size: 16px;
-    padding: 7px 0 7px 20px;
+    padding: 7px 0 7px 37px;
     display: block;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+      transform: translateX(4px);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      opacity: 0.7;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
   }
   &__item + .menu__item {
-    margin-top: 5px;
+    margin-top: 7px;
   }
-  // &__horror::before {
-  //   background-image: url(../images/cat-bg-horror.png);
-  // }
-  // &__mmorpg::before {
-  //   background-image: url(../images/cat-bg-mmorpg.png);
-  // }
-  // &__action::before {
-  //   background-image: url(../images/cat-bg-action.png);
-  // }
-  // &__shooter::before {
-  //   background-image: url(../images/cat-bg-shooter.png);
-  // }
-  // &__rpg::before {
-  //   background-image: url(../images/cat-bg-rpg.png);
-  // }
-  // &__strategy::before {
-  //   background-image: url(../images/cat-bg-strategy.png);
-  // }
-  // &__simulator::before {
-  //   background-image: url(../images/cat-bg-simulator.png);
-  // }
-  // &__adventures::before {
-  //   background-image: url(../images/cat-bg-adventures.png);
-  // }
-  // &__moba::before {
-  //   background-image: url(../images/.png);
-  // }
-  // &__arcade::before {
-  //   background-image: url(../images/.png);
-  // }
-  // &__fighting::before {
-  //   background-image: url(../images/.png);
-  // }
-  // &__race::before {
-  //   background-image: url(../images/.png);
-  // }
-  // &__sport::before {
-  //   background-image: url(../images/.png);
-  // }
-  // &__mmo::before {
-  //   background-image: url(../images/.png);
-  // }
-  // &__puzzles::before {
-  //   background-image: url(../images/.png);
-  // }
+  &__horror::before {
+    background-image: url(../images/zombie.svg);
+  }
+  &__mmorpg::before {
+    background-image: url(../images/mmorpg.svg);
+  }
+  &__action::before {
+    background-image: url(../images/action.svg);
+  }
+  &__shooter::before {
+    background-image: url(../images/shooter.svg);
+  }
+  &__rpg::before {
+    background-image: url(../images/rpg.svg);
+    background-size: 19px;
+    top: 45%;
+  }
+  &__strategy::before {
+    background-image: url(../images/strategy.svg);
+  }
+  &__simulator::before {
+    background-image: url(../images/simulator.svg);
+  }
+  &__adventures::before {
+    background-image: url(../images/adventures.svg);
+  }
+  &__moba::before {
+    background-image: url(../images/moba.svg);
+    background-size: 19px;
+    top: 45%;
+  }
+  &__arcade::before {
+    background-image: url(../images/arcade.svg);
+    background-size: 21px;
+  }
+  &__fighting::before {
+    background-image: url(../images/fighting.svg);
+  }
+  &__race::before {
+    background-image: url(../images/race.svg);
+    background-size: 19px;
+  }
+  &__sport::before {
+    background-image: url(../images/sport.svg);
+    background-size: 18px;
+  }
+  &__mmo::before {
+    background-image: url(../images/mmo.svg);
+  }
+  &__puzzles::before {
+    background-image: url(../images/puzzle.svg);
+    background-size: 18px;
+    top: 45%;
+  }
 }
 
 .header {
@@ -149,12 +170,15 @@
   &__news:hover .header__news-text::before {
     width: 17px;
   }
-  &__btn-link {
-    display: none;
-    align-items: center;
-    visibility: hidden;
-  }
   &__btn-nav {
+    display: none;
+    visibility: hidden;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  &__btn-icon {
     display: grid;
     grid-template-columns: repeat(2, 8px);
     gap: 3px;
@@ -293,6 +317,7 @@
 .related-news {
   user-select: none;
   margin-top: -180px;
+  margin-bottom: 70px;
   &__wrapper {
     position: relative;
   }
@@ -363,6 +388,10 @@
     font-size: 20px;
     margin-bottom: 7px;
     font-weight: 300;
+    height: 78px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
   }
   &__date {
     font-size: 16px;
@@ -391,6 +420,54 @@
     padding: 5px 10px;
     color: #ffffff;
     font-size: 16px;
+  }
+}
+
+.catalog {
+  margin-bottom: 70px;
+  &__inner {
+    column-count: 5;
+    gap: 30px;
+  }
+  &__letter {
+    font-size: 30px;
+    color: $accent-red;
+    margin-bottom: 7px;
+  }
+  &__items {
+    margin-bottom: 15px;
+  }
+  &__item + .catalog__item {
+    margin-top: 5px;
+  }
+}
+
+.footer {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: #131218;
+  &__inner {
+    width: calc(100% - 300px);
+    margin-left: auto;
+    padding: 20px 40px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+  &__menu-link {
+    color: $text-dark;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: $accent-red;
+    }
+    & + .footer__menu-link {
+      margin-left: 20px;
+    }
   }
 }
 
