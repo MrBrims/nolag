@@ -6,14 +6,38 @@
 @import "global";
 
 .sidebar {
-  padding: 120px 40px;
+  padding: 100px 40px 30px 40px;
+  position: relative;
+  &__close {
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    cursor: pointer;
+    display: none;
+    visibility: hidden;
+  }
+  &__search {
+    margin-bottom: 30px;
+    padding-top: 20px;
+    display: none;
+    visibility: hidden;
+  }
   &__title {
     margin-bottom: 10px;
     padding-bottom: 6px;
     border-bottom: 2px solid $border-color;
     font-size: 20px;
-    position: relative;
     font-weight: 500;
+  }
+  &__social {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: none;
+    visibility: hidden;
+  }
+  &__news {
+    display: none;
+    visibility: hidden;
   }
 }
 
@@ -107,10 +131,10 @@
   max-width: 1920px;
   width: 100%;
   position: fixed;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  top: 0;
-  z-index: 2;
+  z-index: 100;
   background: $main-light;
   box-shadow: $shadow;
   &__inner {
@@ -122,6 +146,9 @@
     width: 100%;
     background: $main-light;
     margin-right: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
   }
   &__right {
     display: flex;
@@ -134,42 +161,6 @@
     width: 100%;
     margin-right: 40px;
   }
-  &__news {
-    padding: 8px 30px;
-    color: #ffffff;
-    display: block;
-    cursor: pointer;
-    background: $accent-red;
-    font-size: 16px;
-    position: relative;
-    margin-right: auto;
-    &:hover .header__news-text {
-      transform: translateX(-7px);
-    }
-  }
-  &__news-text {
-    transition: transform 0.3s ease-in;
-    display: block;
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 17px;
-      right: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-image: url(../images/arrow-right.svg);
-      background-position: center center;
-      background-size: 17px;
-      background-repeat: no-repeat;
-      transition: width 0.4s ease-in;
-      z-index: 5;
-    }
-  }
-  &__news:hover .header__news-text::before {
-    width: 17px;
-  }
   &__btn-nav {
     display: none;
     visibility: hidden;
@@ -177,6 +168,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    margin-left: 30px;
   }
   &__btn-icon {
     display: grid;
@@ -187,8 +179,11 @@
     span {
       display: block;
       height: 8px;
-      border: 1px solid #474747;
+      border: 1px solid $accent-red;
     }
+  }
+  &__news {
+    margin-right: auto;
   }
   &__btn-text {
     font-size: 14px;
@@ -196,48 +191,13 @@
     margin-bottom: -3px;
     color: $text-dark;
   }
-  &__social-items {
-    display: flex;
-    align-items: center;
-    margin-left: 40px;
+  &__social {
+    margin-left: 30px;
   }
-  &__social-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 34px;
-    height: 34px;
-    background: $accent-red;
-    transition: transform 0.3s ease-in;
-    cursor: pointer;
-    &:hover {
-      transform: translateY(-3px);
-    }
-    & + .header__social-item {
-      margin-left: 10px;
-    }
-  }
-  &__social-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 34px;
-    height: 34px;
-    background-color: $main;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 20px;
-  }
-  &__social-telegram {
-    background-image: url(../images/telegram.svg);
-    background-position: 6px center;
-  }
-  &__social-vk {
-    background-image: url(../images/vk.svg);
-  }
-  &__social-mail {
-    background-image: url(../images/mail.svg);
-  }
+}
+
+.logo {
+  flex-shrink: 0;
 }
 
 .search-form {
@@ -276,16 +236,93 @@
   }
 }
 
+.social {
+  display: flex;
+  align-items: center;
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    background: $accent-red;
+    transition: transform 0.3s ease-in;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-3px);
+    }
+    & + .social__item {
+      margin-left: 10px;
+    }
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    background-color: $main;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px;
+  }
+  &__telegram {
+    background-image: url(../images/telegram.svg);
+    background-position: 6px center;
+  }
+  &__vk {
+    background-image: url(../images/vk.svg);
+  }
+  &__mail {
+    background-image: url(../images/mail.svg);
+  }
+}
+
+.news-btn {
+  padding: 8px 30px;
+  color: #ffffff;
+  display: block;
+  cursor: pointer;
+  background: $accent-red;
+  font-size: 16px;
+  position: relative;
+  &:hover .news-btn__text {
+    transform: translateX(-7px);
+  }
+  &__text {
+    transition: transform 0.3s ease-in;
+    display: block;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 17px;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url(../images/arrow-right.svg);
+      background-position: center center;
+      background-size: 17px;
+      background-repeat: no-repeat;
+      transition: width 0.4s ease-in;
+      z-index: 5;
+    }
+  }
+  &:hover .news-btn__text::before {
+    width: 17px;
+  }
+}
+
 .hero {
-  margin-top: 57px;
   background-image: url(../images/hero-bg2.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 660px;
+  margin-top: 60px;
   &__wrapper {
     display: flex;
-    height: 660px;
   }
   &__text {
     max-width: 600px;
@@ -362,9 +399,9 @@
   }
   &__slider-pagination {
     margin-right: 200px;
-    margin-bottom: 26px;
+    margin-bottom: 32px;
   }
-  .related-news__slider-nav .swiper-pagination-bullet {
+  &__slider-nav .swiper-pagination-bullet {
     width: 20px;
     height: 5px;
     border-radius: 0;
@@ -373,7 +410,7 @@
     background-color: $main-light;
     transition: all 0.4s ease-in-out;
   }
-  .related-news__slider-nav .swiper-pagination-bullet-active {
+  &__slider-nav .swiper-pagination-bullet-active {
     background: $accent-red;
     width: 30px;
   }
@@ -449,7 +486,7 @@
   &__inner {
     width: calc(100% - 300px);
     margin-left: auto;
-    padding: 20px 40px 20px 20px;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
