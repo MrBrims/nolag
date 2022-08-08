@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Одиночная запись</title>
+  <noscript>
+    <style>
+      .simplebar-content-wrapper {
+        overflow: auto;
+      }
+    </style>
+  </noscript>
+</head>
+
+<body>
+
+  @@include("chunk/header.html")
+
+  <div class="wrapper">
+    <div class="sidebar-wrapper" data-simplebar data-simplebar-auto-hide="false">
+      @@include("chunk/sidebar.html")
+    </div>
+    <div class="content">
+      @@include("chunk/hero-single.html")
+      @@include("chunk/content-single.html")
+    </div>
+  </div>
+
+  @@include("chunk/footer.html")
+
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
